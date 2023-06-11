@@ -1,0 +1,18 @@
+<?php
+
+namespace Test\Config;
+
+use WcCatalog\Helpers\Config;
+
+class SetConfig
+{
+    public static function getConfig()
+    {
+        return new Config([
+            'only_oauth' => true,
+            'api_url_woocommerce' => '<<YOUR_URL>>',
+            'api_key_woocommerce' => '<<YOUR_API_KEY>>',
+            'api_secret_woocommerce' => '<<YOUR_API_SECRET>>',
+        ]);
+    }
+}
