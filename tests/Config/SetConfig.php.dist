@@ -9,7 +9,7 @@ class SetConfig
     public static function getConfig()
     {
         return new Config([
-            'only_oauth' => true,
+            'only_oauth' => true, // (false) if you want to use basic auth
             'api_url_woocommerce' => '<<YOUR_URL>>',
             'api_key_woocommerce' => '<<YOUR_API_KEY>>',
             'api_secret_woocommerce' => '<<YOUR_API_SECRET>>',

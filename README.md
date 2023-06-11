@@ -31,3 +31,11 @@ $productService->all();
 $productService->delete($id, <<REQUEST>>);
 
 ```
+### Execute unit test
+- Rename file woocommerce-catalog-client\tests\Config\SetConfig.php.dist to woocommerce-catalog-client\tests\Config\SetConfig.php
+- Set your WooCommerce API credentials
+- Run unit test command
+```
+>> cd woocommerce-catalog-client
+>> ./vendor/bin/phpunit tests/
+```
