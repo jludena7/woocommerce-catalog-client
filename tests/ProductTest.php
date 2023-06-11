@@ -34,6 +34,7 @@ class ProductTest extends TestCase
             'name' => 'Premium Quality ' . time(),
             'type' => 'simple',
             'regular_price' => '21.99',
+            'stock_quantity' => 10,
             'description' => 'Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.',
             'short_description' => 'Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.',
             'categories' => [
@@ -65,6 +66,8 @@ class ProductTest extends TestCase
      * @group all_product
      * @group update_product
      * @group delete_product
+     * @group get_by_sku
+     * @group update_stock
      * @return mixed
      */
     public function testCreateProduct()
@@ -135,6 +138,30 @@ class ProductTest extends TestCase
         $this->assertIsNumeric($response->id);
 
         return $product;
+    }
+
+    /**
+     * @group get_by_sku
+     * @depends testCreateProduct
+     * @param $product
+     * @return void
+     */
+    public function testGetBySku($product)
+    {
+        $response = $this->productService->getBySku($product->sku);
+        $this->assertIsNumeric($response[0]->id);
+    }
+
+    /**
+     * @group update_stock
+     * @depends testCreateProduct
+     * @param $product
+     * @return void
+     */
+    public function testUpdateStock($product)
+    {
+        $response = $this->productService->updateStock($product->id, 10);
+        $this->assertIsNumeric($response->id);
     }
 
     /**

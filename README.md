@@ -38,4 +38,5 @@ $productService->delete($id, <<REQUEST>>);
 ```
 >> cd woocommerce-catalog-client
 >> ./vendor/bin/phpunit tests/
+>> ./vendor/bin/phpunit tests/ --group=get_by_sku
 ```
