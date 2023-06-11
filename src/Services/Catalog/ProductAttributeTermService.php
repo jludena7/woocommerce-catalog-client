@@ -2,10 +2,12 @@
 
 namespace WcCatalog\Services\Catalog;
 
-use WcCatalog\Services\BaseService;
+use WcCatalog\Services\CallTrait;
 
-class ProductAttributeTermService extends BaseService
+class ProductAttributeTermService
 {
+    use CallTrait;
+
     protected $uri = 'wp-json/wc/v3/products/attributes/%s/terms';
 
     public function create($productAttributeId, $data)

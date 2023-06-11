@@ -6,7 +6,7 @@ use GuzzleHttp\Exception\GuzzleException;
 use WcCatalog\Helpers\Config;
 use WcCatalog\Helpers\HttpClient;
 
-class BaseService
+trait CallTrait
 {
     /**
      * @var Config

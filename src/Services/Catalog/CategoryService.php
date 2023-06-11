@@ -2,11 +2,12 @@
 
 namespace WcCatalog\Services\Catalog;
 
-use WcCatalog\Services\BaseService;
+use WcCatalog\Services\CallTrait;
 use WcCatalog\Services\ServiceTrait;
 
-class CategoryService extends BaseService
+class CategoryService
 {
+    use CallTrait;
     use ServiceTrait;
 
     /**

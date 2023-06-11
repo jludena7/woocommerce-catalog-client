@@ -2,11 +2,12 @@
 
 namespace WcCatalog\Services\Catalog;
 
-use WcCatalog\Services\BaseService;
+use WcCatalog\Services\CallTrait;
 
-
-class ProductVariationService extends BaseService
+class ProductVariationService
 {
+    use CallTrait;
+
     /**
      * @var string
      */
