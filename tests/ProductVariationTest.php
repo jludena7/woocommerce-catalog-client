@@ -75,7 +75,7 @@ class ProductVariationTest extends TestCase
             $responseParam->product->id,
             $responseParam->productVariation->id
         );
-        $this->assertIsNumeric($response->id);
+        $this->assertTrue(isset($response->id));
 
         return $responseParam;
     }

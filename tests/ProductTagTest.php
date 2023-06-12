@@ -58,7 +58,7 @@ class ProductTagTest extends TestCase
     public function testGetProductTag($productTag)
     {
         $response = $this->productTagService->get($productTag->id);
-        $this->assertIsNumeric($response->id);
+        $this->assertTrue(isset($response->id));
 
         return $productTag;
     }

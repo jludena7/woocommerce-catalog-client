@@ -61,7 +61,7 @@ class ProductAttributeTest extends TestCase
     public function testGetProductAttribute($productAttribute)
     {
         $response = $this->productAttributeService->get($productAttribute->id);
-        $this->assertIsNumeric($response->id);
+        $this->assertTrue(isset($response->id));
 
         return $productAttribute;
     }

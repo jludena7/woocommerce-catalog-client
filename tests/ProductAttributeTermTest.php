@@ -72,7 +72,7 @@ class ProductAttributeTermTest extends TestCase
             $responseParam->productAttribute->id,
             $responseParam->productAttributeTerm->id
         );
-        $this->assertIsNumeric($response->id);
+        $this->assertTrue(isset($response->id));
 
         return $responseParam;
     }

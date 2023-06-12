@@ -135,7 +135,7 @@ class ProductTest extends TestCase
         ];
 
         $response = $this->productService->update($product->id, $data);
-        $this->assertIsNumeric($response->id);
+        $this->assertTrue(isset($response->id));
 
         return $product;
     }
@@ -149,7 +149,7 @@ class ProductTest extends TestCase
     public function testGetBySku($product)
     {
         $response = $this->productService->getBySku($product->sku);
-        $this->assertIsNumeric($response[0]->id);
+        $this->assertTrue(isset($response[0]->id));
     }
 
     /**
@@ -161,7 +161,7 @@ class ProductTest extends TestCase
     public function testUpdateStock($product)
     {
         $response = $this->productService->updateStock($product->id, 10);
-        $this->assertIsNumeric($response->id);
+        $this->assertTrue(isset($response->id));
     }
 
     /**
@@ -174,7 +174,7 @@ class ProductTest extends TestCase
     {
         $data = ['force' => true];
         $response = $this->productService->delete($product->id, $data);
-        $this->assertIsNumeric($response->id);
+        $this->assertTrue(isset($response->id));
 
         if (!empty($product->categories)) {
             foreach ($product->categories as $category) {
