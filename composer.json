@@ -5,7 +5,11 @@
     },
     "autoload": {
         "psr-4": {
-            "WcCatalog\\": "src/",
+            "WcCatalog\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
             "Test\\": "tests/"
         }
     },
